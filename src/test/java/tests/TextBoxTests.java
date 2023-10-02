@@ -8,7 +8,6 @@ public class TextBoxTests extends TestBase {
     private String email = "angelina.jolie@mail.com";
     private String currentAddress = "USA, some city";
     private String permanentAddress = "USA, another city";
-
     private TextBoxPage textBoxPage = new TextBoxPage();
 
     @Test
