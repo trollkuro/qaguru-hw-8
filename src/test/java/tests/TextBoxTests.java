@@ -1,6 +1,7 @@
 package tests;
 
 import org.junit.jupiter.api.Test;
+import pages.TextBoxPage;
 
 public class TextBoxTests extends TestBase {
     private String fullName = "Angelina Jolie";
@@ -8,10 +9,12 @@ public class TextBoxTests extends TestBase {
     private String currentAddress = "USA, some city";
     private String permanentAddress = "USA, another city";
 
+    private TextBoxPage textBoxPage = new TextBoxPage();
+
     @Test
     void successfulRegistrationTest(){
-        textBoxPage.openPage();
-        textBoxPage.setFullName(fullName)
+        textBoxPage.openPage()
+                .setFullName(fullName)
                 .setEmail(email)
                 .setCurrentAddress(currentAddress)
                 .setPermanentAddress(permanentAddress)

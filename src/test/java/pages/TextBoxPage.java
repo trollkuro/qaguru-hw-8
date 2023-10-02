@@ -1,11 +1,12 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
+import utils.Utils;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 
-public class TextBoxPage {
+public class TextBoxPage extends Utils {
 
     private SelenideElement fullNameInput = $("#userName"),
                             emailInput = $("#userEmail"),
@@ -17,8 +18,7 @@ public class TextBoxPage {
 
     public TextBoxPage openPage(){
         open("/text-box");
-        executeJavaScript("$('#fixedban').remove()");
-        executeJavaScript("$('footer').remove()");
+        removeFooterAndBanner();
         return this;
     }
 

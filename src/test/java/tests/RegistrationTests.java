@@ -1,6 +1,7 @@
 package tests;
 
 import org.junit.jupiter.api.Test;
+import pages.RegistrationPage;
 
 public class RegistrationTests extends TestBase {
     private String firstName = "Angelina";
@@ -19,6 +20,7 @@ public class RegistrationTests extends TestBase {
     private String state = "Haryana";
     private String city = "Panipat";
     private String resultTableTitle = "Thanks for submitting the form";
+    private RegistrationPage registrationPage = new RegistrationPage();
 
     @Test
     void successfulRegistrationTest() {
