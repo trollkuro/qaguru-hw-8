@@ -3,14 +3,11 @@ package pages;
 import com.codeborne.selenide.SelenideElement;
 import components.DatePicker;
 import components.ResultTableModal;
-import utils.Utils;
-
 import java.io.File;
-
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
-public class RegistrationPage extends Utils {
+public class RegistrationPage {
 
     private DatePicker datePicker = new DatePicker();
     private ResultTableModal resultTableModal = new ResultTableModal();
@@ -32,7 +29,11 @@ public class RegistrationPage extends Utils {
 
     public RegistrationPage openPage(){
         open("/automation-practice-form");
-        removeFooterAndBanner();
+        return this;
+    }
+    public RegistrationPage removeFooterAndBanner(){
+        executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('footer').remove()");
         return this;
     }
     public RegistrationPage setFirstName(String firstName){

@@ -25,6 +25,7 @@ public class RegistrationTests extends TestBase {
     @Test
     void successfulRegistrationTest() {
         registrationPage.openPage()
+                .removeFooterAndBanner()
                 .setFirstName(firstName)
                 .setLastName(lastName)
                 .setEmail(userEmail)
